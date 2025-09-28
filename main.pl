@@ -1,4 +1,4 @@
-% Sistema Especialista
+% Sistema Especialista - Escolha sua trilha 
 % Autores: Kauan Fragoso, Lucas Maciel Cardoso, Kevyn Nícolas
 
 :- dynamic resposta/2.
@@ -8,13 +8,13 @@ trilha(ciencia_de_dados, 'Analise e interpretacao de dados').
 trilha(ciberseguranca, 'Protecao de sistemas contra acessos indevidos').
 trilha(inteligencia_artificial, 'Modelos que aprendem a agir sozinhos').
 trilha(back_end, 'Logica por tras das aplicacoes').
-trilha(front_end, 'Interface do usuario e design').
+trilha(front_end, 'Experiência do usuário e design visual').
 
 % perfis
 perfil(ciencia_de_dados, estatistica, 5).
 perfil(ciencia_de_dados, numeros, 4).
 perfil(ciencia_de_dados, visualizacao_dados, 3).
-perfil(ciencia_de_dados, excel, 2).
+perfil(ciencia_de_dados, excel, 3).
 
 perfil(ciberseguranca, seguranca_digital, 5).
 perfil(ciberseguranca, enigmas_logicos, 4).
@@ -76,7 +76,7 @@ perguntar(ID, Texto) :-
     string_lower(S, Resp),
     (Resp = "s" -> assertz(resposta(ID, s));
      Resp = "n" -> assertz(resposta(ID, n));
-     writeln('Digite só s ou n.'), perguntar(ID, Texto)).
+     writeln('Digite só s ou n please.'), perguntar(ID, Texto)).
 
 % calculo
 calcula_pontuacao(Trilha, Lista, Total) :-
@@ -106,11 +106,11 @@ justificativa(Trilha, Lista) :-
         Lista).
 
 % resultado
-exibe_resultado([]) :- writeln('Nenhuma trilha encontrada').
+exibe_resultado([]) :- writeln('Nenhuma trilha foi encontrada').
 exibe_resultado(R) :-
     R = [Melhor-P | _],
     write('Melhor trilha: '), writeln(Melhor),
-    write('Pontuacao: '), writeln(P),
+    write('Pontos: '), writeln(P),
     writeln('Ranking:'),
     mostrar_ranking(R, 1),
     writeln('Justificativa:'),
@@ -131,4 +131,5 @@ run_test(Arq) :-
     recomenda(R),
     exibe_resultado(R),
     retractall(resposta(_, _)).
+
 
