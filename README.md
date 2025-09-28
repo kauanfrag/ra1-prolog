@@ -1,4 +1,4 @@
-# ra1-prolog
+# RA1 - PROLOG SISTEMA ESPECIALISTA
 Prolog - 
 PUCPR GRUPO KAUAN FRAGOSO, KEVYN NICOLAS, LUCAS MACIEL CARDOSO
 usuário github: kauanfrag; LucasC64, kushinada00
