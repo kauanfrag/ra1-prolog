@@ -1,5 +1,5 @@
 % Sistema Especialista
-% Autores: Kauan Fragoso, Lucas Maciel Cardoso, Kevyn N�colas
+% Autores: Kauan Fragoso, Lucas Maciel Cardoso, Kevyn Nícolas
 
 :- dynamic resposta/2.
 
@@ -8,7 +8,7 @@ trilha(ciencia_de_dados, 'Analise e interpretacao de dados').
 trilha(ciberseguranca, 'Protecao de sistemas contra acessos indevidos').
 trilha(inteligencia_artificial, 'Modelos que aprendem a agir sozinhos').
 trilha(back_end, 'Logica por tras das aplicacoes').
-trilha(front_end, 'Interface do usuario e design visual').
+trilha(front_end, 'Interface do usuario e design').
 
 % perfis
 perfil(ciencia_de_dados, estatistica, 5).
@@ -76,7 +76,7 @@ perguntar(ID, Texto) :-
     string_lower(S, Resp),
     (Resp = "s" -> assertz(resposta(ID, s));
      Resp = "n" -> assertz(resposta(ID, n));
-     writeln('Digite apenas s ou n.'), perguntar(ID, Texto)).
+     writeln('Digite só s ou n.'), perguntar(ID, Texto)).
 
 % calculo
 calcula_pontuacao(Trilha, Lista, Total) :-
@@ -131,3 +131,4 @@ run_test(Arq) :-
     recomenda(R),
     exibe_resultado(R),
     retractall(resposta(_, _)).
+
