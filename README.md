@@ -9,7 +9,7 @@ Professor: Frank Coelho de Alcantara
 
 ###### DESCRIÇÃO DO FUNCIONAMENTO DO PROJETO 
 
-ABRIR O MAIN.PL NO SWISH PROLOG
+ABRIR O MAIN.PL NO SWISH PROLOG - Apenas funciona no instalado na máquina, na versão online não
 abrir também na pasta do swish os 3 testes: perfil_teste_1.pl, perfil_teste_2.pl, perfil_teste_3.pl.
 
 para iniciar basta digitar ?- iniciar e responder as questões apenas com s ou n.
