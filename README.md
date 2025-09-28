@@ -1,6 +1,6 @@
 # ra1-prolog
 Prolog - PUCPR GRUPO KAUAN FRAGOSO, KEVYN NICOLAS, LUCAS MACIEL CARDOSO
-usuário github: kauanfrag; 
+usuário github: kauanfrag; LucasC64
 
 PUC PR - PONTIFÍCIA UNIVERSIDADE CATÓLICA DO PARANÁ
 Programação Lógica e Funcional
