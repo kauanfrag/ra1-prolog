@@ -106,7 +106,7 @@ justificativa(Trilha, Lista) :-
         Lista).
 
 % resultado
-exibe_resultado([]) :- writeln('Nenhuma trilha foi encontrada').
+exibe_resultado([]) :- writeln('Nenhuma trilha encontrada').
 exibe_resultado(R) :-
     R = [Melhor-P | _],
     write('Melhor trilha: '), writeln(Melhor),
@@ -131,6 +131,7 @@ run_test(Arq) :-
     recomenda(R),
     exibe_resultado(R),
     retractall(resposta(_, _)).
+
 
 
 
