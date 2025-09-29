@@ -60,7 +60,7 @@ soma_lista([X|Xs], T) :-
 
 % inicio
 iniciar :-
-    retractall(resposta(_, _)),
+    retractall(resposta(_, _)), %apagar 
     writeln('Bem-vindo ao sistema especialista!'),
     writeln('Responda com s ou n por favor.'),
     faz_perguntas,
@@ -131,6 +131,7 @@ run_test(Arq) :-
     recomenda(R),
     exibe_resultado(R),
     retractall(resposta(_, _)).
+
 
 
 
