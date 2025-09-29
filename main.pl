@@ -98,7 +98,7 @@ recomenda(Ranking) :-
     findall(T-P, member(P-T, Desc), Ranking).
 
 % justificativa
-justificativa(Trilh, Lista) :-
+justificativa(Trilha, Lista) :-
     findall(Texto,
         (perfil(Trilha, Car, _),
          pergunta(ID, Text, Car),
@@ -131,6 +131,7 @@ run_test(Arq) :-
     recomenda(R),
     exibe_resultado(R),
     retractall(resposta(_, _)).
+
 
 
 
