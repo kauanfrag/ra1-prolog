@@ -12,6 +12,7 @@ resposta(10, n).
 resposta(11, n).
 resposta(12, n).
 resposta(13, n).
-resposta(14, s).
+resposta(14, n).
 resposta(15, n).
+
 
