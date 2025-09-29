@@ -56,7 +56,7 @@ pergunta(15, 'Voce tem afinidade com HTML e CSS?', html_css).
 soma_lista([], 0).
 soma_lista([X|Xs], T) :-
     soma_lista(Xs, P),
-    T is X + P.
+    T is X + .
 
 % inicio
 iniciar :-
@@ -131,6 +131,7 @@ run_test(Arq) :-
     recomenda(R),
     exibe_resultado(R),
     retractall(resposta(_, _)).
+
 
 
 
