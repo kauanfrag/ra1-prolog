@@ -54,7 +54,7 @@ pergunta(15, 'Voce tem afinidade com HTML e CSS?', html_css).
 
 % soma
 soma_lista([], 0).
-soma_lista([X|Xs], T) :-
+soma_lista([X|Xs], T) :-   %pontos de uma trilha só
     soma_lista(Xs, P),
     T is X + P.
 
@@ -72,43 +72,43 @@ faz_perguntas :-
 
 perguntar(ID, Texto) :-
     write(Texto), write(' (s/n): '),
-    read_line_to_string(user_input, S),
-    string_lower(S, Resp),
+    read_line_to_string(user_input, S), %like string in S
+    string_lower(S, Resp), %minusculo
     (Resp = "s" -> assertz(resposta(ID, s));
-     Resp = "n" -> assertz(resposta(ID, n));
+     Resp = "n" -> assertz(resposta(ID, n)); %adiciona o fato, e se não pede pra ser só s ou n
      writeln('Digite só s ou n please.'), perguntar(ID, Texto)).
 
 % calculo
-calcula_pontuacao(Trilha, Lista, Total) :-
-    findall(P,
+calcula_pontuacao(Trilha, Lista, Total) :-  %lista caracteres como 'sim'
+    findall(P, %pesos
         (perfil(Trilha, Car, P),
          member(Car, Lista)),
         Pesos),
     soma_lista(Pesos, Total).
 
-calcula_pontuacao(Trilha, P) :-
+calcula_pontuacao(Trilha, P) :-   %usuario respondeu s, conveniente
     findall(Car, (pergunta(ID, _, Car), resposta(ID, s)), Lista),
-    calcula_pontuacao(Trilha, Lista, P).
+    calcula_pontuacao(Trilha, Lista, P). %chama primeira versao
 
 % recomendacao
 recomenda(Ranking) :-
     findall(P-Trilha, (trilha(Trilha, _), calcula_pontuacao(Trilha, P)), Pares),
     keysort(Pares, Ordenado),
-    reverse(Ordenado, Desc),
-    findall(T-P, member(P-T, Desc), Ranking).
+    reverse(Ordenado, Desc),  %inverter para ficar maior até menor
+    findall(T-P, member(P-T, Desc), Ranking). %trilha depois pontuação
 
 % justificativa
 justificativa(Trilha, Lista) :-
     findall(Texto,
-        (perfil(Trilha, Car, _),
+        (perfil(Trilha, Car, _), %dos que o usuario disse sim
          pergunta(ID, Text, Car),
-         resposta(ID, s)),
+         resposta(ID, s)), %e respondeu sim
         Lista).
 
 % resultado
 exibe_resultado([]) :- writeln('Nenhuma trilha encontrada').
 exibe_resultado(R) :-
-    R = [Melhor-P | _],
+    R = [Melhor-P | _],  %ignora o resto
     write('Melhor trilha: '), writeln(Melhor),
     write('Ponto: '), writeln(P),
     writeln('Ranking:'),
@@ -118,7 +118,7 @@ exibe_resultado(R) :-
         forall(member(T, L), (write('- '), writeln(T)));
         writeln('Nenhuma resposta!')).
 
-mostrar_ranking([], _).
+mostrar_ranking([], _).  %formatação
 mostrar_ranking([T-P|R], N) :-
     write(N), write(') '), write(T), write(' - '), writeln(P),
     N1 is N+1,
@@ -131,6 +131,7 @@ run_test(Arq) :-
     recomenda(R),
     exibe_resultado(R),
     retractall(resposta(_, _)).
+
 
 
 
