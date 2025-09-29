@@ -79,7 +79,7 @@ perguntar(ID, Texto) :-
      writeln('Digite só s ou n please.'), perguntar(ID, Texto)).
 
 % calculo
-calcula_pontuacao(Trilh, Lista, Total) :-
+calcula_pontuacao(Trilha, Lista, Total) :-
     findall(P,
         (perfil(Trilha, Car, P),
          member(Car, Lista)),
@@ -131,6 +131,7 @@ run_test(Arq) :-
     recomenda(R),
     exibe_resultado(R),
     retractall(resposta(_, _)).
+
 
 
 
