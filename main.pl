@@ -110,7 +110,7 @@ exibe_resultado([]) :- writeln('Nenhuma trilha foi encontrada').
 exibe_resultado(R) :-
     R = [Melhor-P | _],
     write('Melhor trilha: '), writeln(Melhor),
-    write('Pontos: '), writeln(P),
+    write('Ponto: '), writeln(P),
     writeln('Ranking:'),
     mostrar_ranking(R, 1),
     writeln('Justificativa:'),
@@ -131,5 +131,6 @@ run_test(Arq) :-
     recomenda(R),
     exibe_resultado(R),
     retractall(resposta(_, _)).
+
 
 
