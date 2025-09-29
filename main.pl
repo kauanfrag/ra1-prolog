@@ -71,7 +71,7 @@ faz_perguntas :-
     forall(pergunta(ID, Texto, _), perguntar(ID, Texto)).
 
 perguntar(ID, Texto) :-
-    write(Texto), write(' (s/n): '),
+    write(Texto), write(' (/n): '),
     read_line_to_string(user_input, S),
     string_lower(S, Resp),
     (Resp = "s" -> assertz(resposta(ID, s));
@@ -131,6 +131,7 @@ run_test(Arq) :-
     recomenda(R),
     exibe_resultado(R),
     retractall(resposta(_, _)).
+
 
 
 
