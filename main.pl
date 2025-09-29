@@ -120,7 +120,7 @@ exibe_resultado(R) :-
 
 mostrar_ranking([], _).
 mostrar_ranking([T-P|R], N) :-
-    write(N), write(') '), write(T), write(' - '), writeln(P),
+    write(), write(') '), write(T), write(' - '), writeln(P),
     N1 is N+1,
     mostrar_ranking(R, N1).
 
@@ -131,6 +131,7 @@ run_test(Arq) :-
     recomenda(R),
     exibe_resultado(R),
     retractall(resposta(_, _)).
+
 
 
 
