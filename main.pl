@@ -81,9 +81,9 @@ perguntar(ID, Texto) :-
 % calculo
 calcula_pontuacao(Trilha, Lista, Total) :-
     findall(P,
-        (perfil(Trilh, Car, P),
+        (perfil(Trilha, Car, P),
          member(Car, Lista)),
-        Pesos),
+        Peso),
     soma_lista(Pesos, Total).
 
 calcula_pontuacao(Trilha, P) :-
@@ -131,6 +131,7 @@ run_test(Arq) :-
     recomenda(R),
     exibe_resultado(R),
     retractall(resposta(_, _)).
+
 
 
 
