@@ -5,7 +5,8 @@ usuário github: kauanfrag; LucasC64, kushinada00
 
 PUC PR - PONTIFÍCIA UNIVERSIDADE CATÓLICA DO PARANÁ
 Programação Lógica e Funcional
-Professor: Frank Coelho de Alcantara 
+
+Professor: Frank Coelho De Alcantara 
 
 ###### DESCRIÇÃO DO FUNCIONAMENTO DO PROJETO 
 
