@@ -68,7 +68,7 @@ iniciar :-
     exibe_resultado(R).
 
 faz_perguntas :-
-    forall(pergunta(ID, Texto, _), perguntar(ID, Texto)).
+    forall(pergunta(ID, Texto, _), perguntar(ID, Texto)). %percorrer perguntas
 
 perguntar(ID, Texto) :-
     write(Texto), write(' (s/n): '),
@@ -131,6 +131,7 @@ run_test(Arq) :-
     recomenda(R),
     exibe_resultado(R),
     retractall(resposta(_, _)).
+
 
 
 
