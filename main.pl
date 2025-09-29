@@ -116,7 +116,7 @@ exibe_resultado(R) :-
     writeln('Justificativa:'),
     (justificativa(Melhor, L), L \= [] ->
         forall(member(T, L), (write('- '), writeln(T)));
-        writeln('Nenhuma resposta positiva')).
+        writeln('Nenhuma resposta')).
 
 mostrar_ranking([], _).
 mostrar_ranking([T-P|R], N) :-
@@ -131,6 +131,7 @@ run_test(Arq) :-
     recomenda(R),
     exibe_resultado(R),
     retractall(resposta(_, _)).
+
 
 
 
