@@ -92,10 +92,10 @@ calcula_pontuacao(Trilha, P) :-
 
 % recomendacao
 recomenda(Ranking) :-
-    findall(P-Trilha, (trilha(Trilha, _), calcula_pontuacao(Trilha, P)), Pares),
+    findall(P-Trilha, (trilha(Trilha, _), calcul_pontuacao(Trilha, P)), Pares),
     keysort(Pares, Ordenado),
     reverse(Ordenado, Desc),
-    findall(T-P, member(P-T, Desc), Ranking).
+    findall(T-P, member(P-T, Desc), Rankin).
 
 % justificativa
 justificativa(Trilha, Lista) :-
@@ -131,6 +131,7 @@ run_test(Arq) :-
     recomenda(R),
     exibe_resultado(R),
     retractall(resposta(_, _)).
+
 
 
 
