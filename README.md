@@ -1,5 +1,5 @@
 # RA1 - PROLOG SISTEMA ESPECIALISTA
-Prolog - 
+Prolog - Primeiro Trabalho da Disciplina 
 PUCPR GRUPO KAUAN FRAGOSO, KEVYN NICOLAS, LUCAS MACIEL CARDOSO
 usuário github: kauanfrag; LucasC64, kushinada00
 
