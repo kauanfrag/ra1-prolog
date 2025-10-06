@@ -114,7 +114,7 @@ exibe_resultado(R) :-
     writeln('Ranking:'),
     mostrar_ranking(R, 1),
     writeln('Justificativa:'),
-    (justificativa(Melhor, L), L \= [] ->
+    (justificativa(Melhor, L), L \= [] -> %verifica que nao esta vazia
         forall(member(T, L), (write('- '), writeln(T)));
         writeln('Nenhuma resposta!')).
 
@@ -131,6 +131,7 @@ run_test(Arq) :-
     recomenda(R),
     exibe_resultado(R),
     retractall(resposta(_, _)).
+
 
 
 
