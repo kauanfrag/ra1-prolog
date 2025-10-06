@@ -82,7 +82,7 @@ perguntar(ID, Texto) :-
 calcula_pontuacao(Trilha, Lista, Total) :-  %lista caracteres como 'sim'
     findall(P, %pesos
         (perfil(Trilha, Car, P),
-         member(Car, Lista)),
+         member(Car, Lista)), %member verifica car e so deixa passar positiva
         Pesos),
     soma_lista(Pesos, Total).
 
@@ -131,6 +131,7 @@ run_test(Arq) :-
     recomenda(R),
     exibe_resultado(R),
     retractall(resposta(_, _)).
+
 
 
 
